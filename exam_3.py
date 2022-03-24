@@ -52,19 +52,24 @@ class Tomato:
         self._state = state
 
     def grow(self):
-        global i
-        i += 1
-        state = Tomato.states[i]
-        return state
+        self.i += 1
+        self._state = self.states[self.i]
+        return self._state
 
     def is_ripe(self):
-        global state
-        if state == Tomato.states[3]:
+        if self._state == self.states[3]:
             return "Tomato is ripe!"
         else:
             return "Wait!"
 
 
+class TomatoBush:
+
+
 t = Tomato(1)
-t.grow()
+print(t._state)
+print(t.is_ripe())
 print(t.grow())
+print(t.is_ripe())
+print(t.grow())
+print(t.is_ripe())
