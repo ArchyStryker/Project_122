@@ -52,8 +52,11 @@ class Tomato:
         self._state = state
 
     def grow(self):
-        self.i += 1
-        self._state = self.states[self.i]
+        if self.i < 3:
+            self.i += 1
+            self._state = self.states[self.i]
+        else:
+            self._state = self.states[3]
         return self._state
 
     def is_ripe(self):
@@ -62,12 +65,15 @@ class Tomato:
         else:
             return "Wait!"
 
-
-class TomatoBush:
+    @property
+    def state(self):
+        return self._state
 
 
 t = Tomato(1)
-print(t._state)
+print(t.state)
+print(t.is_ripe())
+print(t.grow())
 print(t.is_ripe())
 print(t.grow())
 print(t.is_ripe())
