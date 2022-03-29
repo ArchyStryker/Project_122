@@ -55,9 +55,9 @@ class DefCalc:
     len_ = 0
 
     def __init__(self):
-        self.__definition()
+        self.definition()
 
-    def __definition(self):
+    def definition(self):
         self.variable = input("Enter string or number: ")
         if self.variable.isdigit():
             self.result = "numbers"
@@ -97,9 +97,3 @@ class DefCalc:
             message = even * self.len_
 
         return message
-
-
-d = DefCalc()
-print(d.length())
-print(d.calculation())
-print(16 * 6)
